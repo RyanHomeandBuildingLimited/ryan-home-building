@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ryan Home & Building Limited | Home & Building Services</title>
+  <meta name="description" content="Ryan Home & Building Limited offers power washing, gutter cleaning, roof cleaning, garden maintenance, roof repairs, fascia and soffit services and more. Get a free quote today.">
+
+  <style>
+    :root {
+      --primary: #0b5ed7;
+      --primary-dark: #0645a5;
+      --dark: #101820;
+      --text: #333;
+      --light: #f5f8fc;
+      --white: #ffffff;
+      --green: #198754;
+      --shadow: 0 10px 30px rgba(0,0,0,0.10);
+      --radius: 14px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    }
+
+    .nav {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+      align-items: center;
+    }
+
+    nav a {
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .nav-phone {
+      background: var(--primary);
+      color: white;
+      padding: 10px 17px;
+      border-radius: 8px;
+    }
+
+    .nav-phone:hover {
+      color: white;
+      background: var(--primary-dark);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(5,18,35,0.90), rgba(5,18,35,0.55)),
+        linear-gradient(135deg, #1769aa, #102a43);
+    }
+
+    .hero-content {
+      max-width: 720px;
+      padding: 80px 0;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 8px 15px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #63b3ff;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 650px;
+      margin-bottom: 35px;
+      color: #e6eef7;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 9px;
+      font-weight: 700;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: white;
+      color: var(--dark);
+    }
+
+    .btn-light:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Sections */
+    section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+    }
+
+    .section-heading .small-title {
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--dark);
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: #666;
+    }
+
+    /* Services */
+    .services {
+      background: var(--light);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: 0.25s;
+      border: 1px solid #edf1f5;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      background: #e8f2ff;
+      color: var(--primary);
+      border-radius: 12px;
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      color: var(--dark);
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .service-card p {
+      color: #666;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 420px;
+      border-radius: 20px;
+      background:
+        linear-gradient(135deg, rgba(11,94,215,.8), rgba(16,24,32,.85)),
+        linear-gradient(135deg, #8ec5fc, #e0c3fc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-image-content {
+      font-size: 2rem;
+      font-weight: 800;
+    }
+
+    .about-text h2 {
+      font-size: 2.5rem;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+      color: #666;
+    }
+
+    .tick-list {
+      list-style: none;
+      margin: 25px 0;
+    }
+
+    .tick-list li {
+      margin: 12px 0;
+      font-weight: 600;
+    }
+
+    .tick-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    /* CTA */
+    .cta {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #cbd5e1;
+      margin-bottom: 30px;
+    }
+
+    /* Quote */
+    .quote-section {
+      background: var(--light);
+    }
+
+    .quote-box {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .quote-box h2 {
+      text-align: center;
+      color: var(--dark);
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    .quote-box > p {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 700;
+      margin-bottom: 7px;
+      color: var(--dark);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #d5dce5;
+      padding: 13px 14px;
+      border-radius: 8px;
+      font: inherit;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(11,94,215,.1);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      margin-top: 22px;
+      width: 100%;
+      border: none;
+      font-size: 1rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .contact-card {
+      text-align: center;
+      padding: 30px;
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card .icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-card h3 {
+      color: var(--dark);
+      margin-bottom: 7px;
+    }
+
+    .contact-card a {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Footer */
+    footer {
+      background: #080d12;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* Mobile */
+    @media (max-width: 800px) {
+      .nav {
+        flex-direction: column;
+        padding: 18px 0;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .service-grid,
+      .contact-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        min-height: 280px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .hero {
+        min-height: 580px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .logo {
+        font-size: 1.1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+
+      .quote-box {
+        padding: 25px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .buttons .btn {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        Ryan Home <span>& Building</span>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#quote">Free Quote</a></li>
+          <li>
+            <a class="nav-phone" href="tel:0851892873">
+              📞 085 189 2873
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+
+          <div class="hero-badge">
+            🏠 Home & Building Services
+          </div>
+
+          <h1>
+            Looking after your
+            <span>home from top to bottom.</span>
+          </h1>
+
+          <p>
+            Ryan Home & Building Limited provides professional
+            exterior cleaning, property maintenance, roofing and
+            garden services.
+          </p>
+
+          <div class="buttons">
+            <a href="#quote" class="btn btn-primary">
+              Get a Free Quote
+            </a>
+
+            <a href="tel:0851892873" class="btn btn-light">
+              📞 Call 085 189 2873
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SERVICES -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="small-title">What We Do</div>
+          <h2>Our Services</h2>
+          <p>
+            From cleaning and maintenance to roofing and exterior work,
+            we help keep your property looking its best.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <div class="service-card">
+            <div class="service-icon">💦</div>
+            <h3>Power Washing</h3>
+            <p>
+              Professional power washing to freshen up driveways,
+              patios, walls, paths and other exterior surfaces.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🧹</div>
+            <h3>Gutter Cleaning</h3>
+            <p>
+              Keep your gutters clear of leaves, dirt and debris
+              and help prevent blockages and water damage.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🏠</div>
+            <h3>Roof Cleaning</h3>
+            <p>
+              Exterior roof cleaning to help remove moss, dirt,
+              algae and unwanted build-up.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🌿</div>
+            <h3>Garden Maintenance</h3>
+            <p>
+              Reliable garden maintenance to keep your outdoor
+              space neat, clean and well cared for.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🔨</div>
+            <h3>Roof Repairs</h3>
+            <p>
+              Help with roof repair and maintenance to keep your
+              property protected from the elements.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🏡</div>
+            <h3>Fascia & Soffit</h3>
+            <p>
+              Fascia and soffit cleaning, maintenance and repair
+              services for your home's exterior.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">✨</div>
+            <h3>Exterior Cleaning</h3>
+            <p>
+              Exterior property cleaning services to improve the
+              appearance of your home or building.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🛠️</div>
+            <h3>Property Maintenance</h3>
+            <p>
+              General property maintenance and exterior upkeep
+              tailored to your needs.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">➕</div>
+            <h3>And Much More</h3>
+            <p>
+              Have a job that isn't listed? Get in touch and ask
+              us about your requirements.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="about-image">
+            <div class="about-image-content">
+              Ryan Home<br>
+              & Building Limited
+              <br><br>
+              🏠 🔨 🌿
+            </div>
+          </div>
+
+          <div class="about-text">
+            <div class="section-heading" style="text-align:left; margin:0 0 20px;">
+              <div class="small-title">Why Choose Us</div>
+              <h2>Keeping your property looking its best.</h2>
+            </div>
+
+            <p>
+              Ryan Home & Building Limited offers a range of services
+              designed to help homeowners and property owners maintain
+              clean, safe and attractive properties.
+            </p>
+
+            <p>
+              Whether you need your gutters cleaned, your roof washed,
+              your garden maintained or repairs carried out, get in
+              touch to discuss your requirements.
+            </p>
+
+            <ul class="tick-list">
+              <li>Free quotes</li>
+              <li>Wide range of property services</li>
+              <li>Home and building maintenance</li>
+              <li>Friendly and professional service</li>
+            </ul>
+
+            <a href="#quote" class="btn btn-primary">
+              Request Your Free Quote
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container">
+        <h2>Need work done on your property?</h2>
+
+        <p>
+          Contact Ryan Home & Building Limited today for a free quote.
+        </p>
+
+        <div class="buttons" style="justify-content:center;">
+          <a href="#quote" class="btn btn-primary">
+            Get a Free Quote
+          </a>
+
+          <a href="tel:0851892873" class="btn btn-light">
+            Call 085 189 2873
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- QUOTE FORM -->
+    <section id="quote" class="quote-section">
+      <div class="container">
+
+        <div class="quote-box">
+
+          <h2>Get a Free Quote</h2>
+
+          <p>
+            Fill in the form below and your email app will open with
+            your quote request ready to send.
+          </p>
+
+          <form id="quoteForm">
+
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Your phone number"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your email"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="service">Service Required</label>
+
+                <select id="service" name="service">
+                  <option value="Power Washing">Power Washing</option>
+                  <option value="Gutter Cleaning">Gutter Cleaning</option>
+                  <option value="Roof Cleaning">Roof Cleaning</option>
+                  <option value="Garden Maintenance">Garden Maintenance</option>
+                  <option value="Roof Repairs">Roof Repairs</option>
+                  <option value="Fascia & Soffit">Fascia & Soffit</option>
+                  <option value="Exterior Cleaning">Exterior Cleaning</option>
+                  <option value="Property Maintenance">Property Maintenance</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group full">
+                <label for="address">Property Address</label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  placeholder="Property address"
+                >
+              </div>
+
+              <div class="form-group full">
+                <label for="message">Tell Us About The Job *</label>
+
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Please describe the work you need..."
+                  required
+                ></textarea>
+              </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">
+              📧 Email My Free Quote Request
+            </button>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section>
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="small-title">Get In Touch</div>
+          <h2>Contact Ryan Home & Building</h2>
+          <p>
+            Ready to discuss your next job? Give us a call or request
+            a free quote.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+
+          <div class="contact-card">
+            <div class="icon">📞</div>
+            <h3>Phone</h3>
+            <a href="tel:0851892873">
+              085 189 2873
+            </a>
+          </div>
+
+          <div class="contact-card">
+            <div class="icon">📧</div>
+            <h3>Free Quote</h3>
+            <a href="#quote">
+              Request a Quote
+            </a>
+          </div>
+
+          <div class="contact-card">
+            <div class="icon">🏠</div>
+            <h3>Services</h3>
+            <p>
+              Home & Building Maintenance
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>
+        © <span id="year"></span>
+        <strong>Ryan Home & Building Limited</strong>.
+        All rights reserved.
+      </p>
+
+      <p style="margin-top:8px;">
+        📞 085 189 2873
+      </p>
+    </div>
+  </footer>
+
+
+  <script>
+    // Automatically display the current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+
+    // Free quote form
+    document.getElementById("quoteForm").addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const email = document.getElementById("email").value;
+      const service = document.getElementById("service").value;
+      const address = document.getElementById("address").value;
+      const message = document.getElementById("message").value;
+
+      /*
+        IMPORTANT:
+        Replace the email address below with Ryan Home & Building
+        Limited's actual email address.
+      */
+      const companyEmail = "YOUR-EMAIL@example.com";
+
+      const subject =
+        "Free Quote Request - " + service;
+
+      const body =
+`Hello Ryan Home & Building Limited,
+
+I would like to request a free quote.
+
+Name: ${name}
+
+Phone: ${phone}
+
+Customer Email: ${email}
+
+Service Required: ${service}
+
+Property Address: ${address}
+
+Job Details:
+${message}
+
+Thank you.`;
+
+      const mailto =
+        "mailto:" + companyEmail +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+      window.location.href = mailto;
+    });
+  </script>
+
+</body>
+</html>
